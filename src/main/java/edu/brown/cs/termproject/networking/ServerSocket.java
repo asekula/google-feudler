@@ -160,7 +160,7 @@ public class ServerSocket {
         	
         	JsonArray valid = new JsonArray();
         	for(JsonElement query : payload.get("queries").getAsJsonArray()) {
-        		valid.add(generator.validateQuery(query.getAsString()) != null);
+        		valid.add(generator.validateQuery(query.getAsString().trim() + " ") != null);
         	}
         	
           // Check whether or not custom query is valid.
@@ -198,7 +198,7 @@ public class ServerSocket {
               JsonArray custom = payload.get("queries").getAsJsonArray();
 
               for (JsonElement query : custom.getAsJsonArray()) {
-                QueryResponses q = generator.validateQuery(query.getAsString());
+                QueryResponses q = generator.validateQuery(query.getAsString().trim() + " ");
                 if (q != null) {
                   customQueries.add(q);
                 }
