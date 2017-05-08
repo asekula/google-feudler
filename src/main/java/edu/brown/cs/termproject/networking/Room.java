@@ -126,6 +126,8 @@ public class Room {
       }
     }
 
+    boolean custom = !queries.isEmpty();
+    
     try {
       if (queries.isEmpty()) {
         if (mode.equals("standard")) {
@@ -136,7 +138,7 @@ public class Room {
         }
       }
 
-      game = new Game(maxUsers, playingUsers, queries, queries.isEmpty() /* , Settings */);
+      game = new Game(maxUsers, playingUsers, queries, custom /* , Settings */);
     } catch (SQLException e) {
       e.printStackTrace();
     }
