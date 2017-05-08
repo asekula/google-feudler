@@ -2,7 +2,7 @@
 
 **Team Members:** Alex Sekula (asekula), Jake Tango (jtango), Loudon Cohen (lcohen2), Sam Waxman (swaxman1)
 
-**Project Idea:** 
+**Project Idea:**
 	A game similar to autocorrect, but the players guess what the suggestions will be, and gain points based on how high up their guess was. It would be multiplayer, and players would compete against each other in timed matches. Google mode would consist of some text that represents the incomplete search, and players would have to guess what google would autocomplete for the search. AskReddit mode would consist of a question posted on reddit.com/r/AskReddit and users would have to guess the answers (it would only take answers with short responses so the users can realistically guess them). A third mode would be "meta mode", where the suggestions are the most common guesses based on what users in the game suggested. Similar to "meta mode", a bonus feature would be that this game learns what people would suggest given an incomplete search, and the data collected could be used to build a better autocomplete system.
 
 **Mentor TA:** Ansel Vahle (ansel_vahle@brown.edu)
@@ -28,13 +28,13 @@
 * Think of some other web services like Google Search (AskReddit, UrbanDictionary, etc.). Describe the service and why it would or would not work as a Feud game.
 	- I think that Feud games need to have short answers in order to work well. Otherwise it is too hard to guess correctly.
 	- Feud could also work with the youtube search bar since it's like google
-	- Yahoo Answers	
+	- Yahoo Answers
 * Any other comments about your experience with online, competitive games?
 	- N/A
 
 **User Defined Problems:**
 - Scoring guesses in any feud game appropriately. It should be forgiving enough to give points to "close" answers but reward accuracy.
-- Having fair, unrepeating prompts. 
+- Having fair, unrepeating prompts.
 - Smooth multiplayer lobbying/rooms with private options.
 - Preventing cheating (against other users simply performing the search).
 
@@ -43,7 +43,7 @@
 	2. Smart scoring.
 	3. Multiplayer functionality.
 	4. Meta-mode.
-	
+
 **Features:**
 * Required:
 	1. A fully functional implementation of Google Feud. Loads suggestions from Google based on what it would suggest given a query, and uses the suggestions as answers that the users try to guess. Allows users to enter their own query, or have a random one provided to them. Google search suggestions are mostly up-to-date (i.e. if someone went to Google they would get the same suggestions).		
@@ -51,12 +51,12 @@
 	3. Allows multiplayer, where users can compete in either timed or turn-based matches. Users can start a multiplayer game, and anyone with a link can join the game.
 	4. "Meta-mode", where the new suggestions are guesses that users made during the game for the input query both during Google Feud and during Meta mode. The system would filter junk guesses, and aggregate suggestions that are similar.
 * Optional:
-	1. Other mediums through which to play the game: 
+	1. Other mediums through which to play the game:
 		1. AskReddit, where the "queries" are questions, and the "suggestions" are users' answers (only short ones so that the game's players can guess them).
 		2. Yahoo Answers, in the same format as above.
 	2. A better autocorrect/autocomplete system that uses user-generated data from the game. This would be similar to meta-mode, but would be more adaptable to different queries, and would still use user data on queries it has never seen before.
 	3. Multiplayer where users can join game with other anonymous players.
-	
+
 **Limitations:**
 - As Google depreciated their Web Search API, we cannot use their more straightforwards tools. We will have to do manual parsing of search results for at least this service.
 
@@ -64,7 +64,8 @@
 <a href = docs/specification.md>Specification</a>
 
 ## Project Design Presentation
-_A link to your design presentation/document will go here!_
+<a href=https://docs.google.com/a/brown.edu/presentation/d/1sOasxKnL9wPyWvrTMLPDLIoFAgKoorYrn40i86lftqY/edit?usp=sharing>Presentation</a>
 
 ## How to Build and Run
-_A necessary part of any README!_
+ - To build, run "mvn package" from the root directory.
+ - To run, call "./run --gui" from the root directory.
