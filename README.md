@@ -64,7 +64,7 @@
 <a href = docs/specification.md>Specification</a>
 
 ## Project Design Presentation
-<a href=https://docs.google.com/a/brown.edu/presentation/d/1sOasxKnL9wPyWvrTMLPDLIoFAgKoorYrn40i86lftqY/edit?usp=sharing>Presentation</a>
+https://docs.google.com/a/brown.edu/presentation/d/1sOasxKnL9wPyWvrTMLPDLIoFAgKoorYrn40i86lftqY/edit?usp=sharing
 
 ## How to Build and Run
  - To build, run "mvn package" from the root directory.
