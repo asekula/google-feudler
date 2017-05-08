@@ -41,6 +41,7 @@ public class Game {
   private final int maxPlayers;
   private int currRound = -1;
   private double time = 0;
+  private final boolean custom;
 
   private final List<QueryResponses> queries;
   private Set<Suggestion> alreadyGuessed;
@@ -51,12 +52,17 @@ public class Game {
   /**
    * Creates a Game object from a List of QueryResponses and settings.
    *
+   * @param maxPlayers
+   *          The maximum player count for the Game.
    * @param queries
    *          A List of QueryResponses representing the queries for the duration
    *          of the Game.
+   * @param custom
+   *          A boolean representing whether or not the Game is a custom Game.         
    */
-  public Game(int maxPlayers, List<QueryResponses> queries /* Settings */) {
+  public Game(int maxPlayers, List<QueryResponses> queries, boolean custom /* Settings */) {
     this.maxPlayers = maxPlayers;
+    this.custom = custom;
     this.queries = queries;
     this.guesses = HashMultimap.create();
   }
@@ -65,15 +71,20 @@ public class Game {
    * Creates a Game object from a List of QueryResponses, initial players and
    * settings.
    *
+   * @param maxPlayers
+   *          The maximum player count for the Game.
    * @param users
    *          A List of User that is to play the Game.
    * @param queries
    *          A List of QueryResponses representing the queries for the duration
    *          of the Game.
+   * @param custom
+   *          A boolean representing whether or not the Game is a custom Game.
    */
-  public Game(int maxPlayers, List<User> users, List<QueryResponses> queries
+  public Game(int maxPlayers, List<User> users, List<QueryResponses> queries, boolean custom
   /* Settings */) {
     this.maxPlayers = maxPlayers;
+    this.custom = custom;
 
     for (User user : users) {
       if (playerMap.size() >= maxPlayers) {
@@ -259,7 +270,7 @@ public class Game {
   public synchronized void endGame() {
     // System.out.println("Ending game.");
 
-    if (guesses.isEmpty()) {
+    if (guesses.isEmpty() || custom) {
       return;
     }
 

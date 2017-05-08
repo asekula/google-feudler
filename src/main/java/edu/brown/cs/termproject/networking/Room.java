@@ -127,16 +127,16 @@ public class Room {
     }
 
     try {
-      if (rounds > queries.size()) {
+      if (queries.isEmpty()) {
         if (mode.equals("standard")) {
-          queries.addAll(new qGenerator().nRandomQrs(rounds - queries.size()));
+          queries.addAll(new qGenerator().nRandomQrs(rounds));
         } else {
           queries.addAll(
-              new qGenerator().nRandomMetaModeQrs((rounds - queries.size())));
+              new qGenerator().nRandomMetaModeQrs((rounds)));
         }
       }
 
-      game = new Game(maxUsers, playingUsers, queries /* , Settings */);
+      game = new Game(maxUsers, playingUsers, queries, queries.isEmpty() /* , Settings */);
     } catch (SQLException e) {
       e.printStackTrace();
     }

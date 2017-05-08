@@ -47,7 +47,7 @@ public class GameTest {
 
   @Test
   public void testGuessIsntJunk() {
-    Game game = new Game(1, null);
+    Game game = new Game(1, null, false);
 
     assertTrue(game.guessIsntJunk("red"));
     assertTrue(game.guessIsntJunk("apple"));
